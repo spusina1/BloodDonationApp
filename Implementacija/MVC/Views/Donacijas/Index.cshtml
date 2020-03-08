@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BloodDonationApplication.Models.Donacija>
+
+@{
+    ViewData["Title"] = "Lista donacija";
+}
+
+<h1 style="color:#cc0000;">Lista donacija</h1>
+
+<p>
+    <a asp-action="Create">Unesite novu donaciju</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumDonacije)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoniranaKolicinaKrvi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatumDonacije)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoniranaKolicinaKrvi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DonacijaId">Uredi</a> |
+                <a asp-action="Details" asp-route-id="@item.DonacijaId">Detalji</a> |
+                <a asp-action="Delete" asp-route-id="@item.DonacijaId">Obriši</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Zavod">Nazad na početnu</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Home">Odjava</a>
+</p>

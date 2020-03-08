@@ -1,0 +1,46 @@
+﻿@model BloodDonationApplication.Models.KomponenteKrvi
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>KomponenteKrvi</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="KomponenteKrviId" />
+            <div class="form-group">
+                <label asp-for="Eritrociti" class="control-label"></label>
+                <input asp-for="Eritrociti" class="form-control" />
+                <span asp-validation-for="Eritrociti" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trombociti" class="control-label"></label>
+                <input asp-for="Trombociti" class="form-control" />
+                <span asp-validation-for="Trombociti" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leukociti" class="control-label"></label>
+                <input asp-for="Leukociti" class="form-control" />
+                <span asp-validation-for="Leukociti" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KrvnaPlazma" class="control-label"></label>
+                <input asp-for="KrvnaPlazma" class="form-control" />
+                <span asp-validation-for="KrvnaPlazma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,51 @@
+﻿@model BloodDonationApplication.Models.Pregled
+
+@{
+    ViewData["Title"] = "Brisanje pregleda";
+}
+
+<h1 style="color:#cc0000;">Brisanje pregleda</h1>
+
+<h3>Jeste li sigurni da želite obrisati pregled?</h3>
+<div>
+    <h4 style="color:#cc0000;">Pregled</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DatumPregleda)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DatumPregleda)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DetaljiPregleda)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DetaljiPregleda)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UspjesanPregled)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UspjesanPregled)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PregledId" />
+        <input type="submit" value="Obriši" class="btn btn-danger" /> |
+        <a asp-action="Index">Lista pregleda</a>
+    </form>
+</div>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Zavod">Nazad na početnu</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Home">Odjava</a>
+</p>

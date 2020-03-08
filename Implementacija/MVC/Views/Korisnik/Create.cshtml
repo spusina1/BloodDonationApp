@@ -1,0 +1,39 @@
+﻿@model BloodDonationApplication.Models.Korisnik
+
+@{
+    ViewData["Title"] = "Prijava";
+}
+
+<h1 style="color:#cc0000;">Prijava</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KorisnickoIme" class="control-label"></label>
+                <input asp-for="KorisnickoIme" class="form-control" />
+                <span asp-validation-for="KorisnickoIme" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sifra" class="control-label"></label>
+                <input type="password" asp-for="sifra" class="form-control" />
+                <span asp-validation-for="sifra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Prijavi" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Home">Nazad na početnu</a>
+</p>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,75 @@
+﻿@model BloodDonationApplication.Models.Donor
+
+@{
+    ViewData["Title"] = "Podaci o donoru";
+}
+
+<h1 style="color:#cc0000;">Unos podataka o donoru</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ime" class="control-label"></label>
+                <input asp-for="Ime" class="form-control" />
+                <span asp-validation-for="Ime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prezime" class="control-label"></label>
+                <input asp-for="Prezime" class="form-control" />
+                <span asp-validation-for="Prezime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Jmbg" class="control-label"></label>
+                <input asp-for="Jmbg" class="form-control" />
+                <span asp-validation-for="Jmbg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrojMobilnogTelefona" class="control-label"></label>
+                <input asp-for="BrojMobilnogTelefona" class="form-control" />
+                <span asp-validation-for="BrojMobilnogTelefona" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grad" class="control-label"></label>
+                <input asp-for="Grad" class="form-control" />
+                <span asp-validation-for="Grad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KrvnaGrupa.Naziv" class="control-label"></label>
+                <input asp-for="KrvnaGrupa.Naziv" class="form-control" />
+                <span asp-validation-for="KrvnaGrupa.Naziv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Unos donora" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Pregled svih donora</a>
+</div>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Zavod">Nazad na početnu</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Home">Odjava</a>
+</p>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

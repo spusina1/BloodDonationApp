@@ -1,0 +1,67 @@
+﻿@model BloodDonationApplication.Models.Donacija
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 style="color:#cc0000;">Unos podataka o donaciji</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DatumDonacije" class="control-label"></label>
+                <input asp-for="DatumDonacije" class="form-control" />
+                <span asp-validation-for="DatumDonacije" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoniranaKolicinaKrvi" class="control-label"></label>
+                <input asp-for="DoniranaKolicinaKrvi" class="form-control" />
+                <span asp-validation-for="DoniranaKolicinaKrvi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoniraneKolicine.Eritrociti" class="control-label"></label>
+                <input asp-for="DoniraneKolicine.Eritrociti" class="form-control" />
+                <span asp-validation-for="DoniraneKolicine.Eritrociti" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoniraneKolicine.Leukociti" class="control-label"></label>
+                <input asp-for="DoniraneKolicine.Leukociti" class="form-control" />
+                <span asp-validation-for="DoniraneKolicine.Leukociti" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoniraneKolicine.Trombociti" class="control-label"></label>
+                <input asp-for="DoniraneKolicine.Trombociti" class="form-control" />
+                <span asp-validation-for="DoniraneKolicine.Trombociti" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoniraneKolicine.KrvnaPlazma" class="control-label"></label>
+                <input asp-for="DoniraneKolicine.KrvnaPlazma" class="form-control" />
+                <span asp-validation-for="DoniraneKolicine.KrvnaPlazma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sačuvaj" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<br />
+
+<p>
+    <a asp-action="Index">Lista donacija</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Zavod">Nazad na početnu</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Home">Odjava</a>
+</p>

@@ -1,0 +1,31 @@
+﻿@model BloodDonationApplication.Models.Zahtjev
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Kreiranje novog zahtjeva za krv</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KolicinaKrvi" class="control-label"></label>
+                <input asp-for="KolicinaKrvi" class="form-control" />
+                <span asp-validation-for="KolicinaKrvi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<p>
+    <a asp-action="Index" asp-controller="Klinika">Povratak na prethodnu stranicu</a>
+</p>
+<p>
+    <a asp-action="Index" asp-controller="Home">Odjava</a>
+</p>

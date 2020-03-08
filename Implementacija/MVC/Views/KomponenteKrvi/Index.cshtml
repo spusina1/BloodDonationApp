@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BloodDonationApplication.Models.KomponenteKrvi>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Eritrociti)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trombociti)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Leukociti)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KrvnaPlazma)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Eritrociti)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Trombociti)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Leukociti)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KrvnaPlazma)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.KomponenteKrviId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.KomponenteKrviId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.KomponenteKrviId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

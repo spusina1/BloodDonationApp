@@ -1,0 +1,33 @@
+﻿@model BloodDonationApplication.Models.Donacija
+
+@{
+    ViewData["Title"] = "Detalji";
+}
+
+<h1 style="color:#cc0000;">Detalji</h1>
+
+<div>
+    <h4>Donacija</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DatumDonacije)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DatumDonacije)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DoniranaKolicinaKrvi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DoniranaKolicinaKrvi)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DonacijaId">Uredi</a> |
+    <a asp-action="Index">Lista donacija</a>
+</div>
+<div>
+    <a asp-action="Index" asp-controller="Home">Nazad na početnu</a>
+</div>

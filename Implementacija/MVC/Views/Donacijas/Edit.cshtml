@@ -1,0 +1,39 @@
+﻿@model BloodDonationApplication.Models.Donacija
+
+@{
+    ViewData["Title"] = "Uređivanje donaciju";
+}
+
+<h1 style="color:#cc0000;">Uređivanje donacije</h1>
+
+<h4>Donacija</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DonacijaId" />
+            <div class="form-group">
+                <label asp-for="DatumDonacije" class="control-label"></label>
+                <input asp-for="DatumDonacije" class="form-control" />
+                <span asp-validation-for="DatumDonacije" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoniranaKolicinaKrvi" class="control-label"></label>
+                <input asp-for="DoniranaKolicinaKrvi" class="form-control" />
+                <span asp-validation-for="DoniranaKolicinaKrvi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Spasi" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Lista donacija</a>
+</div>
+<div>
+    <a asp-action="Index" asp-controller="Home">Nazad na početnu</a>
+</div>
+

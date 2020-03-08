@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BloodDonationApplication.Models.Zavod>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Zavod za transfuziologiju</h1>
+
+<br />
+
+<br />
+
+<p>
+    <a asp-action="Pretraga" asp-controller="Donor" asp-route-sifra="61">Unos pregleda</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Donor">Pregled liste donora</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Zahtjev">Pregled pristiglih zahtjeva za krv</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="KrvnaGrupa">Poziv donora</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Home">Odjava</a>
+</p>

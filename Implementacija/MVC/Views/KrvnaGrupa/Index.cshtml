@@ -1,0 +1,37 @@
+﻿@model IEnumerable<BloodDonationApplication.Models.KrvnaGrupa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Krvne grupe</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naziv)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.KrvnaGrupaId" asp-route-sifra="57">Trazi donore</a> |
+                <a asp-action="Details" asp-route-id="@item.KrvnaGrupaId" asp-route-sifra="59">Pozovi donore</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Zavod">Povratak na prethodnu stranicu</a>
+</p>

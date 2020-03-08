@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BloodDonationApplication.Models.Zahtjev>
+
+@{
+    ViewData["Title"] = "Pregled zahtjeva";
+}
+
+<h1>Pregled zahtjeva</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Odobren)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KolicinaKrvi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Odobren)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KolicinaKrvi)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ZahtjevId">Uredi</a> |
+                    <a asp-action="Details" asp-route-id="@item.ZahtjevId">Detalji</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ZahtjevId">Obriši</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Zavod">Povratak na prethodnu stranicu</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Home">Odjava</a>
+</p>

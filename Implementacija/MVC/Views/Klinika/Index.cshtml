@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BloodDonationApplication.Models.Klinika>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Klinika</h1>
+
+<br />
+
+<br />
+
+<p>
+    <a asp-action="Create" asp-controller="Zahtjev">Slanje zahtjeva za krv zavodu</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="PregledZahtjevaKlinika" asp-controller="Zahtjev">Pregled odobrenih zahtjeva od strane zavoda</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Home">Odjava</a>
+</p>

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BloodDonationApplication.Models.Donor>
+
+@{
+    ViewData["Title"] = "IndexPoKrvnojGrupi";
+}
+
+<h1>Donori pronadjeni po krvnoj grupi</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prezime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jmbg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrojMobilnogTelefona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prezime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Jmbg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrojMobilnogTelefona)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grad)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DonorId">Uredi</a> |
+                    <a asp-action="Details" asp-route-id="@item.DonorId">Detalji</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DonorId">Obriši</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Zavod">Nazad na početnu</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Home">Odjava</a>
+</p>

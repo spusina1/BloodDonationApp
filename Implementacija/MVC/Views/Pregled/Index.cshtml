@@ -1,0 +1,60 @@
+﻿@model IEnumerable<BloodDonationApplication.Models.Pregled>
+
+@{
+    ViewData["Title"] = "Lista pregleda";
+}
+
+<h1 style="color:#cc0000;">Lista pregleda</h1>
+
+<p>
+    <a asp-action="Create">Unesite novi pregled</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumPregleda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DetaljiPregleda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UspjesanPregled)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DatumPregleda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DetaljiPregleda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UspjesanPregled)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PregledId">Uredi</a> |
+                    <a asp-action="Details" asp-route-id="@item.PregledId">Detalji</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PregledId">Obriši</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Zavod">Nazad na početnu</a>
+</p>
+
+<br />
+
+<p>
+    <a asp-action="Index" asp-controller="Home">Odjava</a>
+</p>
